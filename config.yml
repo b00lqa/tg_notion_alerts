@@ -1,0 +1,6 @@
+---
+Telegram:
+  api: "TOKEN_HERE"
+Notion:
+  api: "TOKEN_HERE"
+...
