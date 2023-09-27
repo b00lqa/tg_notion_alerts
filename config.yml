@@ -1,6 +1,7 @@
 ---
 Telegram:
-  api: "TOKEN_HERE"
+  key: "TOKEN_HERE"
 Notion:
-  api: "TOKEN_HERE"
+  key: "secret_i6ytqw8YfTh73GqTKM7ouG1hcYI5kUtZh6V9Noasi2b"
+  db_id: "3312f8b3bf7947eb929db05bed57f1b9"
 ...

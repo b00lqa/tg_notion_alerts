@@ -9,12 +9,19 @@ import (
 
 func main() {
 	fmt.Println("vim-go")
-	err := readConfig()
+
+	// Reding config.yml file.
+	viper.SetConfigFile("config.yml")
+	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatalf("error reading config: %v", err)
 	}
 
-	log.Println(
-		viper.Get("Telegram").(map[string]interface{})["api"],
-	)
+	nc := createNotionClient()
+	db, err := nc.GetDB()
+	if err != nil {
+		log.Fatalf("error getting notion db: %v", err)
+	}
+
+	log.Print(db.Title)
 }
