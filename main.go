@@ -18,9 +18,18 @@ func main() {
 	}
 
 	nc := createNotionClient()
-	db, err := nc.GetDB()
+	db, err := nc.getDB()
 	if err != nil {
 		log.Fatalf("error getting notion db: %v", err)
+	}
+
+	taskList, err := nc.getTasksList(db)
+	if err != nil {
+		log.Fatalf("error getting tasks: %v", err)
+	}
+
+	for _, task := range taskList {
+		log.Print(task.Properties["Name"])
 	}
 
 	log.Print(db.Title)
